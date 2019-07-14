@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/RomanShkola/shipyard/issues"
   },
-  "homepage": "https://github.com/RomanShkola/shipyard#readme"
+  "homepage": "https://github.com/RomanShkola/shipyard#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }

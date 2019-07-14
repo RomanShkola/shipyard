@@ -34,10 +34,7 @@ const getAllShips = (() => {
 const deleteShip = ((ship) => {
 
     return pgPool.query('DELETE FROM ships WHERE id = $1', [ship.id])
-        .then((success, error) => {
-            if (!error) return true
-            else return false
-        }).catch(console.log);
+        .then(success => true, error => false).catch(console.log);
 })
 
 module.exports = {

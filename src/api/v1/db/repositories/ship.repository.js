@@ -2,6 +2,10 @@ const pgPool = require('../index');
 const Ship = require('../../models/ship.model').Ship;
 const ShipWithId = require('../../models/ship.model').ShipWithId;
 
+/**
+ * Stores a Ship to the database
+ * @type {Function}
+ */
 const createShip = ((ship) => {
 
     return pgPool.query('INSERT INTO ships (name, speed) VALUES ($1, $2) RETURNING id', [ship.name, ship.speed])
@@ -10,6 +14,10 @@ const createShip = ((ship) => {
             }).catch(console.log);
 })
 
+/**
+ * Rerieves all Ships
+ * @type {Function}
+ */
 const getAllShips = (() => {
 
     return pgPool.query('SELECT * FROM ships ORDER BY id ASC')
@@ -18,6 +26,11 @@ const getAllShips = (() => {
         }).catch(console.log);
 })
 
+/**
+ * For tests
+ * Deletes a Ship
+ * @type {Function}
+ */
 const deleteShip = ((ship) => {
 
     return pgPool.query('DELETE FROM ships WHERE id = $1', [ship.id])

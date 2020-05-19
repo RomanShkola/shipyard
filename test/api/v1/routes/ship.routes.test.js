@@ -1,9 +1,9 @@
 let chai = require('chai');
 let expect = require('chai').expect;
 let chaiHttp = require('chai-http');
-let server = require('../../../../server');
+let server = require('../../../../../server');
 
-const ShipRepository = require('../../../../src/api/v1/db/repositories/ship.repository');
+const ShipRepository = require('../../../../api/v1/db/repositories/ship.repository');
 
 chai.should();
 chai.use(chaiHttp);
